@@ -1,10 +1,14 @@
 import Vue from 'vue'
 import vuetify from "./plugins/vuetify";
 
+import Survey from "./components/Survey"
+
 const app = new Vue({
     vuetify,
-    delimiters: ['{^', '^}'],
     el: '#app',
+    components: {
+        Survey
+    },
     data: () => ({
         drawer: true,
         isDark: false,
@@ -31,6 +35,10 @@ const app = new Vue({
             this.$vuetify.theme.dark = !this.$vuetify.theme.dark
             this.isDark = this.$vuetify.theme.dark
             localStorage.setItem("dark_theme", this.$vuetify.theme.dark.toString())
+        },
+
+        getViewFrontUrl(slug) {
+
         }
     }
 })

@@ -34,13 +34,14 @@
                     >
                         <v-list-item
                             link
+                            :href="'/survey/pdsq'"
                         >
                             <v-list-item-icon>
                                 <v-icon>mdi-view-dashboard</v-icon>
                             </v-list-item-icon>
 
                             <v-list-item-content>
-                                <v-list-item-title>Dasboard</v-list-item-title>
+                                <v-list-item-title>PDSQ</v-list-item-title>
                             </v-list-item-content>
                         </v-list-item>
                     </v-list>

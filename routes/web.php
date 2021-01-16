@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SurveyController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +16,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::prefix('survey')->group(function () {
+    Route::get('{survey_slug}', [SurveyController::class, 'show']);
 });
