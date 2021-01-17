@@ -17,11 +17,11 @@
                 >
                     <v-list-item two-line>
                         <v-list-item-avatar>
-                            <img src="https://randomuser.me/api/portraits/women/81.jpg" alt="avatar">
+                            <img src="/images/alina.jpeg" alt="avatar">
                         </v-list-item-avatar>
 
                         <v-list-item-content>
-                            <v-list-item-title>Jane Smith</v-list-item-title>
+                            <v-list-item-title>Alina Anca</v-list-item-title>
                             <v-list-item-subtitle>Logged In</v-list-item-subtitle>
                         </v-list-item-content>
                     </v-list-item>
@@ -63,13 +63,13 @@
                         @click="toggle_dark_mode"
                     >
                         <v-icon dark>
-                            {^ !isDark ? 'mdi-weather-night' : 'mdi-weather-sunset' ^}
+                            ${ !isDark ? 'mdi-weather-night' : 'mdi-weather-sunset' }
                         </v-icon>
                     </v-btn>
                 </v-app-bar>
 
                 <v-main>
-                    <v-container fluid>
+                    <v-container fluid pa-0>
                         @yield('content')
                     </v-container>
                 </v-main>

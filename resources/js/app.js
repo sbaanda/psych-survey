@@ -1,14 +1,13 @@
 import Vue from 'vue'
 import vuetify from "./plugins/vuetify";
 
-import Survey from "./components/Survey"
+Vue.component('survey', () => import('./components/Survey.vue'))
+Vue.component('survey-description', () => import('./components/SurveyDescription.vue'))
 
 const app = new Vue({
     vuetify,
     el: '#app',
-    components: {
-        Survey
-    },
+    delimiters: ['${', '}'],
     data: () => ({
         drawer: true,
         isDark: false,

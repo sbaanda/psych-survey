@@ -1,38 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6ce46bd9-5798-4606-ae01-c4e0a99a2ad4" name="Default Changelist" comment="backend flow">
-      <change afterPath="$PROJECT_DIR$/.idea/alina.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/7f1afd20-115f-4ca3-a480-a756bab80cf3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/7f1afd20-115f-4ca3-a480-a756bab80cf3/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/phpunit.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/c/0c96dd63e07fb2e889aeaea5cbabd89d0d09f1fb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/9/19d826e8485f0f05c56681d6c895ad1fbc2d5a63" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/e/4e52e2a63befd1dc69600001e78b80ebece1ac9b" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/b/6b9a783d9b43fee50fd28f56dbd1856d2608f305" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/0/7030d0b2f71b999ff89a343de08c414af32fc93a" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/3/73a5f9e927f70e0292701d67f61dbff4fb17febc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/5/857628e89e6d3e0f341720284d70b5f44c757924" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/SurveyController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Item.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Question.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Survey.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/factories/ItemFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/factories/QuestionFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/factories/SurveyFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_15_212323_create_surveys_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_15_212406_create_survey_items_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_15_212422_create_survey_questions_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_15_235036_update_survey_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/day-menu.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/night-menu.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/components/Survey.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/survey.blade.php" afterDir="false" />
+    <list default="true" id="6ce46bd9-5798-4606-ae01-c4e0a99a2ad4" name="Default Changelist" comment="survey basic mechanics">
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SurveyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SurveyController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Item.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Item.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Survey.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Survey.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/Survey.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/SurveyDescription.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/plugins/vuetify.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/plugins/vuetify.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/survey.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/surveyDescription.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +35,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="GitToolBoxStore">
     <option name="projectConfigVersion" value="2" />
@@ -186,7 +176,8 @@
   </component>
   <component name="ProjectId" id="1mz8oBowo1BhhuxUxGrYpzot6Id" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="1" id="Add" />
+    <ConfirmationsSetting value="2" id="Add" />
+    <ConfirmationsSetting value="2" id="Remove" />
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -200,7 +191,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ct-web" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -208,7 +199,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="Shelf.Project.Settings" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -246,7 +237,12 @@
       <workItem from="1610641277989" duration="367000" />
       <workItem from="1610641675999" duration="4811000" />
       <workItem from="1610711102597" duration="575000" />
-      <workItem from="1610741990922" duration="11329000" />
+      <workItem from="1610741990922" duration="11439000" />
+      <workItem from="1610808705687" duration="627000" />
+      <workItem from="1610840985816" duration="14236000" />
+      <workItem from="1610858049266" duration="3501000" />
+      <workItem from="1610889808970" duration="4203000" />
+      <workItem from="1610894256064" duration="298000" />
     </task>
     <task id="LOCAL-00001" summary="first push">
       <created>1610592938522</created>
@@ -262,7 +258,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610760904069</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="back front flow">
+      <created>1610761238792</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1610761238792</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -281,8 +284,11 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <option name="SHOW_PATCH_IN_EXPLORER" value="true" />
     <MESSAGE value="first push" />
     <MESSAGE value="backend flow" />
-    <option name="LAST_COMMIT_MESSAGE" value="backend flow" />
+    <MESSAGE value="back front flow" />
+    <option name="LAST_COMMIT_MESSAGE" value="back front flow" />
   </component>
 </project>

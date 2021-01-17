@@ -22,7 +22,10 @@ import Vuetify, {
     VDivider,
     VBtn,
     VSwitch,
-    VSpacer
+    VSpacer,
+    VSheet,
+    VRow,
+    VCol
 } from 'vuetify/lib'
 
 Vue.use(Vuetify, {
@@ -46,7 +49,10 @@ Vue.use(Vuetify, {
         VDivider,
         VBtn,
         VSwitch,
-        VSpacer
+        VSpacer,
+        VSheet,
+        VRow,
+        VCol
     },
 })
 

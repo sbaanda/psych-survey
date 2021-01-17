@@ -2,6 +2,6 @@
 
 @section('content')
     <survey
-        :survey="{{ json_encode($surveyDetails, JSON_NUMERIC_CHECK) }}"
+        :survey="{{ json_encode($survey, JSON_NUMERIC_CHECK) }}"
     ></survey>
 @endsection
