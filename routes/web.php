@@ -21,4 +21,5 @@ Route::get('/', function () {
 Route::prefix('survey')->group(function () {
     Route::get('{survey_slug}', [SurveyController::class, 'show']);
     Route::get('{survey_slug}/start', [SurveyController::class, 'start']);
+    Route::get('{survey_slug}/get', [SurveyController::class, 'getSurvey']);
 });

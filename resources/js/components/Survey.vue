@@ -1,217 +1,70 @@
 <template>
     <v-container fluid>
-        <div class="toSlide q_1">
-            <v-col cols="12">
-                <v-row class="pa-4 text-center">
-                    <v-col
-                        cols="8"
-                        offset="2"
-                    >
-                        <h3>V-aţi simţit trist(ă) sau deprimat(ă)?</h3>
+        <div v-if="surveyList">
+            <div
+                v-for="question in surveyList.questions" :key="question.no"
+                :id="'q_' + question.no"
+                :class="question.no === 1 ? 'toSlide' : 'nextSlide'"
+                class="q"
+            >
+                <v-row>
+                    <v-col v-if="question.no !== 1" cols="12">
+                        <v-row class="pa-4 text-center">
+                            <v-col
+                                cols="2"
+                                offset="1"
+                            >
+                                <v-btn
+                                    class="ma-4"
+                                    outlined
+                                    fab
+                                    color="indigo"
+                                    x-large
+                                    @click="back"
+                                >
+                                    <v-icon>
+                                        mdi-arrow-left
+                                    </v-icon>
+                                </v-btn>
+                            </v-col>
+                        </v-row>
+                    </v-col>
+                    <v-col cols="12">
+                        <v-row class="pa-4 text-center">
+                            <v-col
+                                cols="8"
+                                offset="2"
+                            >
+                                <h3>{{ question.name }}</h3>
+                            </v-col>
+                        </v-row>
+                        <v-row class="pa-4 text-center">
+                            <v-col
+                                cols="6"
+                            >
+                                <v-btn
+                                    class="ma-4"
+                                    outlined
+                                    color="indigo"
+                                    x-large
+                                    @click="slide"
+                                >Da</v-btn>
+                            </v-col>
+                            <v-col
+                                cols="6"
+                            >
+                                <v-btn
+                                    class="ma-4"
+                                    outlined
+                                    color="indigo"
+                                    x-large
+                                    @click="slide"
+                                >Nu</v-btn>
+                            </v-col>
+                        </v-row>
                     </v-col>
                 </v-row>
-                <v-row class="pa-4 text-center">
-                    <v-col
-                        cols="6"
-                    >
-                        <v-btn
-                            class="ma-4"
-                            outlined
-                            color="indigo"
-                            x-large
-                            @click="first"
-                        >Da</v-btn>
-                    </v-col>
-                    <v-col
-                        cols="6"
-                    >
-                        <v-btn
-                            class="ma-4"
-                            outlined
-                            color="indigo"
-                            x-large
-                            @click="first"
-                        >Nu</v-btn>
-                    </v-col>
-                </v-row>
-            </v-col>
-        </div>
-        <div class="nextSlide q_2">
-            <v-row>
-                <v-col cols="12">
-                    <v-row class="pa-4 text-center">
-                        <v-col
-                            cols="2"
-                            offset="1"
-                        >
-                            <v-btn
-                                class="ma-4"
-                                outlined
-                                fab
-                                color="indigo"
-                                x-large
-                                @click="back"
-                            >
-                                <v-icon>
-                                    mdi-arrow-left
-                                </v-icon>
-                            </v-btn>
-                        </v-col>
-                    </v-row>
-                </v-col>
-                <v-col cols="12">
-                    <v-row class="pa-4 text-center">
-                        <v-col
-                            cols="8"
-                            offset="2"
-                        >
-                            <h3>V-aţi simţit trist(ă) sau deprimat(ă) în cea mai mare parte a zilei, aproape în fiecare zi?</h3>
-                        </v-col>
-                    </v-row>
-                    <v-row class="pa-4 text-center">
-                        <v-col
-                            cols="6"
-                        >
-                            <v-btn
-                                class="ma-4"
-                                outlined
-                                color="indigo"
-                                x-large
-                                @click="second"
-                            >Da</v-btn>
-                        </v-col>
-                        <v-col
-                            cols="6"
-                        >
-                            <v-btn
-                                class="ma-4"
-                                outlined
-                                color="indigo"
-                                x-large
-                                @click="second"
-                            >Nu</v-btn>
-                        </v-col>
-                    </v-row>
-                </v-col>
-            </v-row>
-        </div>
-        <div class="nextSlide q_3">
-            <v-row>
-                <v-col cols="12">
-                    <v-row class="pa-4 text-center">
-                        <v-col
-                            cols="2"
-                            offset="1"
-                        >
-                            <v-btn
-                                class="ma-4"
-                                outlined
-                                fab
-                                color="indigo"
-                                x-large
-                                @click="back"
-                            >
-                                <v-icon>
-                                    mdi-arrow-left
-                                </v-icon>
-                            </v-btn>
-                        </v-col>
-                    </v-row>
-                </v-col>
-                <v-col cols="12">
-                    <v-row class="pa-4 text-center">
-                        <v-col
-                            cols="8"
-                            offset="2"
-                        >
-                            <h3>V-aţi bucurat mai puţin de aproape toate lucrurile care înainte, în mod normal, vă făceau plăcere?</h3>
-                        </v-col>
-                    </v-row>
-                    <v-row class="pa-4 text-center">
-                        <v-col
-                            cols="6"
-                        >
-                            <v-btn
-                                class="ma-4"
-                                outlined
-                                color="indigo"
-                                x-large
-                                @click="second"
-                            >Da</v-btn>
-                        </v-col>
-                        <v-col
-                            cols="6"
-                        >
-                            <v-btn
-                                class="ma-4"
-                                outlined
-                                color="indigo"
-                                x-large
-                                @click="second"
-                            >Nu</v-btn>
-                        </v-col>
-                    </v-row>
-                </v-col>
-            </v-row>
-        </div>
-        <div class="nextSlide q_4">
-            <v-row>
-                <v-col cols="12">
-                    <v-row class="pa-4 text-center">
-                        <v-col
-                            cols="2"
-                            offset="1"
-                        >
-                            <v-btn
-                                class="ma-4"
-                                outlined
-                                fab
-                                color="indigo"
-                                x-large
-                                @click="back"
-                            >
-                                <v-icon>
-                                    mdi-arrow-left
-                                </v-icon>
-                            </v-btn>
-                        </v-col>
-                    </v-row>
-                </v-col>
-                <v-col cols="12">
-                    <v-row class="pa-4 text-center">
-                        <v-col
-                            cols="8"
-                            offset="2"
-                        >
-                            <h3>V-aţi pierdut interesul pentru aproape toate activităţile de care, în mod normal, eraţi interesat(ă)?</h3>
-                        </v-col>
-                    </v-row>
-                    <v-row class="pa-4 text-center">
-                        <v-col
-                            cols="6"
-                        >
-                            <v-btn
-                                class="ma-4"
-                                outlined
-                                color="indigo"
-                                x-large
-                                @click="second"
-                            >Da</v-btn>
-                        </v-col>
-                        <v-col
-                            cols="6"
-                        >
-                            <v-btn
-                                class="ma-4"
-                                outlined
-                                color="indigo"
-                                x-large
-                                @click="second"
-                            >Nu</v-btn>
-                        </v-col>
-                    </v-row>
-                </v-col>
-            </v-row>
+            </div>
         </div>
     </v-container>
 </template>
@@ -227,59 +80,48 @@ export default {
     },
     data() {
         return {
-            next: 2
+            next: 1,
+            surveyList: false
         }
     },
+    created() {
+        this.getSurvey()
+    },
     methods: {
-        first() {
-            const firstEl = document.getElementsByClassName("q_1")
-            const secondEl = document.getElementsByClassName("q_2")
-
-            if (firstEl[0].classList.contains("onSlidingReverse")) {
-                firstEl[0].classList.remove("onSlidingReverse")
-            }
-
-            if (secondEl[0].classList.contains("nextSlidingReverse")) {
-                secondEl[0].classList.remove("nextSlidingReverse")
-            }
-
-            firstEl[0].classList.add("onSliding")
-            secondEl[0].classList.add("nextSliding")
+        async getSurvey() {
+            const response = await this.$axios.get('/survey/' + this.survey.name + '/get')
+            this.surveyList = response.data.survey
         },
-        second() {
-            const el = document.getElementsByClassName("q_" + this.next)
-            const nextEl = document.getElementsByClassName("q_" + (this.next + 1))
+        slide() {
+            const el = document.getElementById("q_" + this.next)
+            const nextEl = document.getElementById("q_" + (this.next + 1))
 
-            if (el[0].classList.contains("onSlidingReverse")) {
-                el[0].classList.remove("onSlidingReverse")
-            }
+            el.classList.remove("onSlidingReverse")
+            el.classList.remove('nextSliding')
+            el.classList.add("onSliding")
 
-            if (nextEl[0].classList.contains("nextSlidingReverse")) {
-                nextEl[0].classList.remove("nextSlidingReverse")
-            }
-
-            el[0].classList.remove('nextSliding')
-            el[0].classList.add("onSliding")
-
-            nextEl[0].classList.add("nextSliding")
+            nextEl.classList.remove("onSlidingReverse")
+            nextEl.classList.remove("nextSlidingReverse")
+            nextEl.classList.add("nextSliding")
 
             this.next++
         },
         back() {
-            const firstEl = document.getElementsByClassName("q_" + (this.next - 1))
-            const secondEl = document.getElementsByClassName("q_" + this.next)
+            const el = document.getElementById("q_" + (this.next - 1))
+            const nextEl = document.getElementById("q_" + this.next)
 
-            if (secondEl[0].classList.contains("nextSlidingReverse")) {
-                secondEl[0].classList.remove("nextSlidingReverse")
-            }
+            el.classList.remove("onSlidingReverse")
+            el.classList.remove("onSlidingReverse")
+            el.classList.remove("onSliding")
 
-            firstEl[0].classList.add("onSlidingReverse")
-            secondEl[0].classList.add("nextSlidingReverse")
+            nextEl.classList.remove("nextSlidingReverse")
+            nextEl.classList.remove("nextSlidingReverse")
+            nextEl.classList.remove("nextSliding")
 
-            firstEl[0].classList.remove("onSliding")
-            secondEl[0].classList.remove("nextSliding")
+            el.classList.add("onSlidingReverse")
+            nextEl.classList.add("nextSlidingReverse")
 
-            if (this.next > 2) {
+            if (this.next > 1) {
                 this.next--
             }
         }
@@ -294,6 +136,7 @@ export default {
         position: relative;
         overflow: hidden;
     }
+    .q { background: lightsalmon; }
     .q_1 { background: lightsalmon; }
     .q_2 { background: darkseagreen; }
     .q_3 { background: lightslategrey; }

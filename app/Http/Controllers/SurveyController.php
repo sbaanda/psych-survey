@@ -14,10 +14,13 @@ class SurveyController extends Controller
     }
 
     public function start($slug) {
-        $survey = Survey::with(['items' => function($query) {
-            $query->with('questions');
-        }])->where('slug', $slug)->first();
+        return view('survey', ['survey' => ['name' => $slug]]);
+    }
 
-        return view('survey', compact('survey'));
+    public function getSurvey($slug): \Illuminate\Http\JsonResponse
+    {
+        $survey = Survey::with('questions')->where('slug', $slug)->first();
+
+        return response()->json(compact('survey'));
     }
 }

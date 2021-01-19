@@ -25,7 +25,8 @@ import Vuetify, {
     VSpacer,
     VSheet,
     VRow,
-    VCol
+    VCol,
+    VProgressCircular
 } from 'vuetify/lib'
 
 Vue.use(Vuetify, {
@@ -52,7 +53,8 @@ Vue.use(Vuetify, {
         VSpacer,
         VSheet,
         VRow,
-        VCol
+        VCol,
+        VProgressCircular
     },
 })
 
