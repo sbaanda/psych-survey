@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\SurveyController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,12 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+require __DIR__.'/auth.php';
+
+
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::prefix('survey')->group(function () {
-    Route::get('{survey_slug}', [SurveyController::class, 'show']);
-    Route::get('{survey_slug}/start', [SurveyController::class, 'start']);
-    Route::get('{survey_slug}/get', [SurveyController::class, 'getSurvey']);
-});
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+

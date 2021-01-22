@@ -26,7 +26,11 @@ import Vuetify, {
     VSheet,
     VRow,
     VCol,
-    VProgressCircular
+    VProgressCircular,
+    VCard,
+    VCardText,
+    VCardActions,
+    VTextField
 } from 'vuetify/lib'
 
 Vue.use(Vuetify, {
@@ -54,7 +58,11 @@ Vue.use(Vuetify, {
         VSheet,
         VRow,
         VCol,
-        VProgressCircular
+        VProgressCircular,
+        VCard,
+        VCardText,
+        VCardActions,
+        VTextField
     },
 })
 

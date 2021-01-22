@@ -2,9 +2,8 @@ import Vue from 'vue'
 import axios from 'axios'
 import vuetify from "./plugins/vuetify"
 
-//import { default as axios } from './plugins/axios'
-
 Vue.component('survey', () => import('./components/Survey.vue'))
+Vue.component('register', () => import('./components/Register.vue'))
 Vue.component('survey-description', () => import('./components/SurveyDescription.vue'))
 
 //Vue.use(axios, {data: window.axios})
