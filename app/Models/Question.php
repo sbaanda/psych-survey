@@ -11,4 +11,8 @@ class Question extends Model
 
     public $timestamps = false;
     protected $table = 'survey_questions';
+
+    public function item() {
+        return $this->belongsTo(Item::class);
+    }
 }

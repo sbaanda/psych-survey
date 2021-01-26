@@ -4,7 +4,7 @@
             <div
                 v-for="question in surveyList.questions" :key="question.no"
                 :id="'q_' + question.no"
-                :class="question.no === 1 ? 'toSlide' : 'nextSlide'"
+                :class="setClass(question)"
                 class="q"
             >
                 <v-row>
@@ -20,7 +20,7 @@
                                     fab
                                     color="indigo"
                                     x-large
-                                    @click="back"
+                                    @click="back(question)"
                                 >
                                     <v-icon>
                                         mdi-arrow-left
@@ -47,7 +47,7 @@
                                     outlined
                                     color="indigo"
                                     x-large
-                                    @click="slide"
+                                    @click="slide(true, question)"
                                 >Da</v-btn>
                             </v-col>
                             <v-col
@@ -58,7 +58,7 @@
                                     outlined
                                     color="indigo"
                                     x-large
-                                    @click="slide"
+                                    @click="slide(false, question)"
                                 >Nu</v-btn>
                             </v-col>
                         </v-row>
@@ -76,15 +76,23 @@ export default {
         survey: {
             type: Object,
             default: {}
+        },
+        complete: {
+            type: Object,
+            default: {}
         }
     },
     data() {
         return {
             next: 1,
-            surveyList: false
+            surveyList: false,
+            finished: false
         }
     },
     created() {
+        if (this.complete.status === 'incomplete') {
+            this.next = this.complete.results.length + 1
+        }
         this.getSurvey()
     },
     methods: {
@@ -92,38 +100,80 @@ export default {
             const response = await this.$axios.get('/survey/' + this.survey.name + '/get')
             this.surveyList = response.data.survey
         },
-        slide() {
-            const el = document.getElementById("q_" + this.next)
-            const nextEl = document.getElementById("q_" + (this.next + 1))
+        setClass(question) {
+            const lastResult = this.complete.results[(this.complete.results.length - 1)]
+            let slideClass = ''
 
-            el.classList.remove("onSlidingReverse")
-            el.classList.remove('nextSliding')
-            el.classList.add("onSliding")
-
-            nextEl.classList.remove("onSlidingReverse")
-            nextEl.classList.remove("nextSlidingReverse")
-            nextEl.classList.add("nextSliding")
-
-            this.next++
-        },
-        back() {
-            const el = document.getElementById("q_" + (this.next - 1))
-            const nextEl = document.getElementById("q_" + this.next)
-
-            el.classList.remove("onSlidingReverse")
-            el.classList.remove("onSlidingReverse")
-            el.classList.remove("onSliding")
-
-            nextEl.classList.remove("nextSlidingReverse")
-            nextEl.classList.remove("nextSlidingReverse")
-            nextEl.classList.remove("nextSliding")
-
-            el.classList.add("onSlidingReverse")
-            nextEl.classList.add("nextSlidingReverse")
-
-            if (this.next > 1) {
-                this.next--
+            if(question.no === 1) {
+                slideClass += 'toSlide'
+            } else {
+                slideClass += 'nextSlide'
             }
+
+            if(this.complete.status === 'incomplete') {
+                if(question.no < lastResult.no) {
+                    slideClass += ' onSliding'
+                } else if(question.no === lastResult.no) {
+                    slideClass += ' onSliding'
+                } else if((question.no - lastResult.no) === 1) {
+                    slideClass += ' nextSliding'
+                }
+            }
+
+            return slideClass
+        },
+        slide(value, question) {
+            this.$axios.post('/survey/' + this.survey.name + '/result', {
+                complete_id: this.complete.id,
+                item_id: question.item_id,
+                no: question.no,
+                value: JSON.stringify({ choice: value })
+            }).then(response => {
+                if(response.data.status === 'success') {
+                    if (this.next === this.surveyList.questions.length) {
+                        window.location.href = window.location.origin + '/survey/' + this.survey.name
+                    } else {
+                        const el = document.getElementById("q_" + this.next)
+                        const nextEl = document.getElementById("q_" + (this.next + 1))
+
+                        el.classList.remove("onSlidingReverse")
+                        el.classList.remove('nextSliding')
+                        el.classList.add("onSliding")
+
+                        nextEl.classList.remove("onSlidingReverse")
+                        nextEl.classList.remove("nextSlidingReverse")
+                        nextEl.classList.add("nextSliding")
+
+                        this.next++
+                    }
+                }
+            })
+        },
+        back(question) {
+            this.$axios.post('/survey/' + this.survey.name + '/result/remove', {
+                complete_id: this.complete.id,
+                no: (question.no - 1),
+            }).then(response => {
+                if(response.data.status === 'success') {
+                    const el = document.getElementById("q_" + (this.next - 1))
+                    const nextEl = document.getElementById("q_" + this.next)
+
+                    el.classList.remove("onSlidingReverse")
+                    el.classList.remove("onSlidingReverse")
+                    el.classList.remove("onSliding")
+
+                    nextEl.classList.remove("nextSlidingReverse")
+                    nextEl.classList.remove("nextSlidingReverse")
+                    nextEl.classList.remove("nextSliding")
+
+                    el.classList.add("onSlidingReverse")
+                    nextEl.classList.add("nextSlidingReverse")
+
+                    if (this.next > 1) {
+                        this.next--
+                    }
+                }
+            })
         }
     }
 }

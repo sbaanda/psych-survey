@@ -11,6 +11,10 @@ class Survey extends Model
 
     public $timestamps = false;
 
+    public function complete() {
+        return $this->hasOne(Complete::class);
+    }
+
     public function items(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(Item::class, 'survey_id');

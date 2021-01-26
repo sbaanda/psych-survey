@@ -107,15 +107,24 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     survey: {
       type: Object,
       "default": {}
+    },
+    complete: {
+      type: Object,
+      "default": {}
     }
   },
   data: function data() {
     return {
       next: 1,
-      surveyList: false
+      surveyList: false,
+      finished: false
     };
   },
   created: function created() {
+    if (this.complete.status === 'incomplete') {
+      this.next = this.complete.results.length + 1;
+    }
+
     this.getSurvey();
   },
   methods: {
@@ -143,32 +152,80 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }, _callee);
       }))();
     },
-    slide: function slide() {
-      var el = document.getElementById("q_" + this.next);
-      var nextEl = document.getElementById("q_" + (this.next + 1));
-      el.classList.remove("onSlidingReverse");
-      el.classList.remove('nextSliding');
-      el.classList.add("onSliding");
-      nextEl.classList.remove("onSlidingReverse");
-      nextEl.classList.remove("nextSlidingReverse");
-      nextEl.classList.add("nextSliding");
-      this.next++;
-    },
-    back: function back() {
-      var el = document.getElementById("q_" + (this.next - 1));
-      var nextEl = document.getElementById("q_" + this.next);
-      el.classList.remove("onSlidingReverse");
-      el.classList.remove("onSlidingReverse");
-      el.classList.remove("onSliding");
-      nextEl.classList.remove("nextSlidingReverse");
-      nextEl.classList.remove("nextSlidingReverse");
-      nextEl.classList.remove("nextSliding");
-      el.classList.add("onSlidingReverse");
-      nextEl.classList.add("nextSlidingReverse");
+    setClass: function setClass(question) {
+      var lastResult = this.complete.results[this.complete.results.length - 1];
+      var slideClass = '';
 
-      if (this.next > 1) {
-        this.next--;
+      if (question.no === 1) {
+        slideClass += 'toSlide';
+      } else {
+        slideClass += 'nextSlide';
       }
+
+      if (this.complete.status === 'incomplete') {
+        if (question.no < lastResult.no) {
+          slideClass += ' onSliding';
+        } else if (question.no === lastResult.no) {
+          slideClass += ' onSliding';
+        } else if (question.no - lastResult.no === 1) {
+          slideClass += ' nextSliding';
+        }
+      }
+
+      return slideClass;
+    },
+    slide: function slide(value, question) {
+      var _this2 = this;
+
+      this.$axios.post('/survey/' + this.survey.name + '/result', {
+        complete_id: this.complete.id,
+        item_id: question.item_id,
+        no: question.no,
+        value: JSON.stringify({
+          choice: value
+        })
+      }).then(function (response) {
+        if (response.data.status === 'success') {
+          if (_this2.next === _this2.surveyList.questions.length) {
+            window.location.href = window.location.origin + '/survey/' + _this2.survey.name;
+          } else {
+            var el = document.getElementById("q_" + _this2.next);
+            var nextEl = document.getElementById("q_" + (_this2.next + 1));
+            el.classList.remove("onSlidingReverse");
+            el.classList.remove('nextSliding');
+            el.classList.add("onSliding");
+            nextEl.classList.remove("onSlidingReverse");
+            nextEl.classList.remove("nextSlidingReverse");
+            nextEl.classList.add("nextSliding");
+            _this2.next++;
+          }
+        }
+      });
+    },
+    back: function back(question) {
+      var _this3 = this;
+
+      this.$axios.post('/survey/' + this.survey.name + '/result/remove', {
+        complete_id: this.complete.id,
+        no: question.no - 1
+      }).then(function (response) {
+        if (response.data.status === 'success') {
+          var el = document.getElementById("q_" + (_this3.next - 1));
+          var nextEl = document.getElementById("q_" + _this3.next);
+          el.classList.remove("onSlidingReverse");
+          el.classList.remove("onSlidingReverse");
+          el.classList.remove("onSliding");
+          nextEl.classList.remove("nextSlidingReverse");
+          nextEl.classList.remove("nextSlidingReverse");
+          nextEl.classList.remove("nextSliding");
+          el.classList.add("onSlidingReverse");
+          nextEl.classList.add("nextSlidingReverse");
+
+          if (_this3.next > 1) {
+            _this3.next--;
+          }
+        }
+      });
     }
   }
 });
@@ -1100,7 +1157,7 @@ var render = function() {
               {
                 key: question.no,
                 staticClass: "q",
-                class: question.no === 1 ? "toSlide" : "nextSlide",
+                class: _vm.setClass(question),
                 attrs: { id: "q_" + question.no }
               },
               [
@@ -1130,7 +1187,11 @@ var render = function() {
                                           color: "indigo",
                                           "x-large": ""
                                         },
-                                        on: { click: _vm.back }
+                                        on: {
+                                          click: function($event) {
+                                            return _vm.back(question)
+                                          }
+                                        }
                                       },
                                       [
                                         _c("v-icon", [
@@ -1184,7 +1245,11 @@ var render = function() {
                                       color: "indigo",
                                       "x-large": ""
                                     },
-                                    on: { click: _vm.slide }
+                                    on: {
+                                      click: function($event) {
+                                        return _vm.slide(true, question)
+                                      }
+                                    }
                                   },
                                   [_vm._v("Da")]
                                 )
@@ -1205,7 +1270,11 @@ var render = function() {
                                       color: "indigo",
                                       "x-large": ""
                                     },
-                                    on: { click: _vm.slide }
+                                    on: {
+                                      click: function($event) {
+                                        return _vm.slide(false, question)
+                                      }
+                                    }
                                   },
                                   [_vm._v("Nu")]
                                 )
