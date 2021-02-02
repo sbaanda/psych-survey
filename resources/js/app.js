@@ -6,7 +6,6 @@ Vue.component('survey', () => import('./components/Survey.vue'))
 Vue.component('register', () => import('./components/Register.vue'))
 Vue.component('survey-description', () => import('./components/SurveyDescription.vue'))
 
-//Vue.use(axios, {data: window.axios})
 Vue.prototype.$axios = axios
 
 require('./bootstrap')
@@ -17,11 +16,25 @@ Promise.all([]).then(([labels, i18n]) => {
         el: '#app',
         delimiters: ['${', '}'],
         data: () => ({
+            user: window.App.user,
+            isDoctor: window.App.isDoctor,
+            isPatient: window.App.isPatient,
             drawer: true,
             isDark: false,
             fab: true
         }),
+        computed: {
+            loggedIn() {
+                return !!this.user
+            },
+            getDrawer() {
+                return {
+                    pdsq: this.isDoctor ? '/survey/pdsq/users' : '/survey/pdsq'
+                }
+            }
+        },
         mounted() {
+            console.log(this.isDoctor)
             const theme = localStorage.getItem("dark_theme");
             if (theme) {
                 this.isDark = theme === "true"

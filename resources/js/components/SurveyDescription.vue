@@ -7,7 +7,7 @@
                 class="primary"
                 href="/survey/pdsq/start"
             >
-                Start survey
+                {{ this.result === null ? 'Start Survey' : 'Restart Survey' }}
             </v-btn>
         </div>
     </div>
@@ -20,7 +20,11 @@ export default {
         survey: {
           type: Object,
           default: {}
-      }
+        },
+        result: {
+            type: Object,
+            default: {}
+        }
     }
 }
 </script>

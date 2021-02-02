@@ -7,12 +7,17 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <script type="text/javascript">
+        window.App = @json($jsApp);
+    </script>
+
 
     <title>Laravel</title>
 </head>
 <body>
     <div id="app">
         <v-app id="inspire">
+
             <v-navigation-drawer
                 :src="!isDark ? '/images/day-menu.jpg' : '/images/night-menu.jpg'"
                 v-model="drawer"
@@ -38,7 +43,7 @@
                 >
                     <v-list-item
                         link
-                        :href="'/survey/pdsq'"
+                        :href="this.getDrawer.pdsq"
                     >
                         <v-list-item-icon>
                             <v-icon>mdi-view-dashboard</v-icon>

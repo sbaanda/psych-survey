@@ -17,11 +17,14 @@ class Complete extends Model
         'status',
     ];
 
-    public function survey() {
+    public function survey(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
         return $this->belongsTo(Survey::class);
     }
 
-    public function results() {
+    public function results(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
         return $this->hasMany(Result::class);
     }
+
 }

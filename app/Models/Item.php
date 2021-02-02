@@ -17,4 +17,9 @@ class Item extends Model
     {
         return $this->hasMany(Question::class, 'item_id');
     }
+
+    public function results(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Result::class, 'item_id');
+    }
 }

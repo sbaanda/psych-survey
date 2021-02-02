@@ -15,11 +15,13 @@ class Result extends Model
 
     protected $fillable = ['complete_id', 'item_id', 'no', 'value'];
 
-    public function complete() {
+    public function complete(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
         return $this->belongsTo(Complete::class);
     }
 
-    public function items() {
-        return $this->belongsTo(Item::class);
+    public function items(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(Item::class, 'item_id', 'id');
     }
 }

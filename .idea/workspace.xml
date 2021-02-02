@@ -2,24 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6ce46bd9-5798-4606-ae01-c4e0a99a2ad4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Models/Complete.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Result.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_23_015903_create_survey_result_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_23_184806_create_survey_complete_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_23_195251_update_survey_results_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Providers/ComposerServiceProvider.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Repositories/SurveyRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/permission.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_02_02_000144_create_permission_tables.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_02_02_031908_update_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/alina.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/alina.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/7f1afd20-115f-4ca3-a480-a756bab80cf3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/7f1afd20-115f-4ca3-a480-a756bab80cf3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/5/857628e89e6d3e0f341720284d70b5f44c757924" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/5/857628e89e6d3e0f341720284d70b5f44c757924" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SurveyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SurveyController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Question.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Question.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Survey.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Survey.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Complete.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Complete.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Item.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Item.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Result.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Result.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/resources_js_components_Survey_vue.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/resources_js_components_Survey_vue.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/Survey.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Survey.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/survey.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/survey.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/resources_js_components_SurveyDescription_vue.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/resources_js_components_SurveyDescription_vue.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/SurveyDescription.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/SurveyDescription.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/surveyDescription.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/surveyDescription.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -179,6 +187,7 @@
       <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock" />
       <path value="$PROJECT_DIR$/vendor/phpdocumentor/type-resolver" />
       <path value="$PROJECT_DIR$/vendor/laravel/breeze" />
+      <path value="$PROJECT_DIR$/vendor/spatie/laravel-permission" />
     </include_path>
   </component>
   <component name="ProjectId" id="1mz8oBowo1BhhuxUxGrYpzot6Id" />
@@ -263,7 +272,12 @@
       <workItem from="1611353238570" duration="7438000" />
       <workItem from="1611423987893" duration="9189000" />
       <workItem from="1611523656036" duration="12672000" />
-      <workItem from="1611580963717" duration="7107000" />
+      <workItem from="1611580963717" duration="7167000" />
+      <workItem from="1611930683686" duration="7332000" />
+      <workItem from="1612036609364" duration="2175000" />
+      <workItem from="1612057451996" duration="794000" />
+      <workItem from="1612096071802" duration="14700000" />
+      <workItem from="1612190393829" duration="13111000" />
     </task>
     <task id="LOCAL-00001" summary="first push">
       <created>1610592938522</created>
@@ -314,7 +328,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611282241786</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="saving results">
+      <created>1611621079536</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1611621079536</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -342,6 +363,7 @@
     <MESSAGE value="survey basic mechanics old files" />
     <MESSAGE value="survey basic mechanics fixes" />
     <MESSAGE value="authentication" />
-    <option name="LAST_COMMIT_MESSAGE" value="authentication" />
+    <MESSAGE value="saving results" />
+    <option name="LAST_COMMIT_MESSAGE" value="saving results" />
   </component>
 </project>

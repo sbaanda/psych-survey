@@ -1869,8 +1869,7 @@ vue__WEBPACK_IMPORTED_MODULE_2__.default.component('register', function () {
 });
 vue__WEBPACK_IMPORTED_MODULE_2__.default.component('survey-description', function () {
   return __webpack_require__.e(/*! import() */ "resources_js_components_SurveyDescription_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/SurveyDescription.vue */ "./resources/js/components/SurveyDescription.vue"));
-}); //Vue.use(axios, {data: window.axios})
-
+});
 vue__WEBPACK_IMPORTED_MODULE_2__.default.prototype.$axios = (axios__WEBPACK_IMPORTED_MODULE_0___default());
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
@@ -1886,12 +1885,26 @@ Promise.all([]).then(function (_ref) {
     delimiters: ['${', '}'],
     data: function data() {
       return {
+        user: window.App.user,
+        isDoctor: window.App.isDoctor,
+        isPatient: window.App.isPatient,
         drawer: true,
         isDark: false,
         fab: true
       };
     },
+    computed: {
+      loggedIn: function loggedIn() {
+        return !!this.user;
+      },
+      getDrawer: function getDrawer() {
+        return {
+          pdsq: this.isDoctor ? '/survey/pdsq/users' : '/survey/pdsq'
+        };
+      }
+    },
     mounted: function mounted() {
+      console.log(this.isDoctor);
       var theme = localStorage.getItem("dark_theme");
 
       if (theme) {

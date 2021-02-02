@@ -32,6 +32,10 @@ __webpack_require__.r(__webpack_exports__);
     survey: {
       type: Object,
       "default": {}
+    },
+    result: {
+      type: Object,
+      "default": {}
     }
   }
 });
@@ -138,7 +142,15 @@ var render = function() {
         _c(
           "v-btn",
           { staticClass: "primary", attrs: { href: "/survey/pdsq/start" } },
-          [_vm._v("\n            Start survey\n        ")]
+          [
+            _vm._v(
+              "\n            " +
+                _vm._s(
+                  this.result === null ? "Start Survey" : "Restart Survey"
+                ) +
+                "\n        "
+            )
+          ]
         )
       ],
       1

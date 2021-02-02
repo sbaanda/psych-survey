@@ -29,11 +29,15 @@ Route::middleware(['auth'])->group(function () {
         return view('dashboard');
     });
 
-    Route::prefix('survey')->group(function () {
+    Route::prefix('survey')->middleware(['role:patient'])->group(function () {
         Route::get('{slug}', [\App\Http\Controllers\SurveyController::class, 'show']);
         Route::get('{slug}/start', [\App\Http\Controllers\SurveyController::class, 'start']);
         Route::get('{slug}/get', [\App\Http\Controllers\SurveyController::class, 'getSurvey']);
         Route::post('{slug}/result', [\App\Http\Controllers\SurveyController::class, 'result']);
         Route::post('{slug}/result/remove', [\App\Http\Controllers\SurveyController::class, 'removeResult']);
     });
+});
+
+Route::get('/test', function() {
+    App\Repositories\SurveyRepository::calculateSurvey(App\Models\Complete::find(3));
 });
