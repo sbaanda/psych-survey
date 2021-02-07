@@ -43,9 +43,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function patients()
+    public static function scopeTarget($query, $parent)
     {
-        return $this->belongsTo(User::class, 'id', 'target_id');
+        return $query->where('target_id', $parent);
     }
 
     public function complete(): \Illuminate\Database\Eloquent\Relations\HasMany

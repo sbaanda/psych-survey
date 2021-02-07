@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class UpdateUsersTable extends Migration
+class EditSurveyResultsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class UpdateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::table('users', function(Blueprint $table) {
-            $table->unsignedBigInteger('target_id')->default(0)->after('remember_token');
+        Schema::table('survey_results', function (Blueprint $table) {
+            $table->unsignedSmallInteger('question_id')->after('item_id');
 
-            $table->index('target_id', 'ix_doctor_patient');
+            $table->foreign('question_id', 'fk_question_result')->references('id')->on('survey_questions')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

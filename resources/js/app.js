@@ -1,10 +1,33 @@
 import Vue from 'vue'
 import axios from 'axios'
 import vuetify from "./plugins/vuetify"
+import { HorizontalBar } from 'vue-chartjs'
 
 Vue.component('survey', () => import('./components/Survey.vue'))
 Vue.component('register', () => import('./components/Register.vue'))
 Vue.component('survey-description', () => import('./components/SurveyDescription.vue'))
+Vue.component('survey-patients', () => import('./components/SurveyPatients.vue'))
+Vue.component('survey-result', () => import('./components/SurveyResult.vue'))
+
+// Vue.component('horizontal-bar-chart', {
+//     extends: HorizontalBar,
+//     props: {
+//         barLabels: {
+//             type: Array,
+//             default: []
+//         },
+//         barDatasets: {
+//             type: Array,
+//             default: []
+//         }
+//     },
+//     created () {
+//         this.renderChart({
+//             labels: this.barLabels,
+//             datasets: this.barDatasets
+//         }, {responsive: true, maintainAspectRatio: false})
+//     }
+// })
 
 Vue.prototype.$axios = axios
 
@@ -29,12 +52,11 @@ Promise.all([]).then(([labels, i18n]) => {
             },
             getDrawer() {
                 return {
-                    pdsq: this.isDoctor ? '/survey/pdsq/users' : '/survey/pdsq'
+                    pdsq: this.isDoctor ? '/survey/pdsq/patients' : '/survey/pdsq'
                 }
             }
         },
         mounted() {
-            console.log(this.isDoctor)
             const theme = localStorage.getItem("dark_theme");
             if (theme) {
                 this.isDark = theme === "true"
@@ -57,9 +79,7 @@ Promise.all([]).then(([labels, i18n]) => {
                 localStorage.setItem("dark_theme", this.$vuetify.theme.dark.toString())
             },
 
-            getViewFrontUrl(slug) {
-
-            }
+            getViewFrontUrl(slug) {}
         }
     })
 })

@@ -126,6 +126,7 @@ export default {
             this.$axios.post('/survey/' + this.survey.name + '/result', {
                 complete_id: this.complete.id,
                 item_id: question.item_id,
+                question_id: question.id,
                 no: question.no,
                 value: JSON.stringify({ choice: value })
             }).then(response => {

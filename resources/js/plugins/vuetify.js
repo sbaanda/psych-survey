@@ -30,7 +30,10 @@ import Vuetify, {
     VCard,
     VCardText,
     VCardActions,
-    VTextField
+    VTextField,
+    VDataTable,
+    VSimpleTable,
+    VChip
 } from 'vuetify/lib'
 
 Vue.use(Vuetify, {
@@ -62,7 +65,10 @@ Vue.use(Vuetify, {
         VCard,
         VCardText,
         VCardActions,
-        VTextField
+        VTextField,
+        VDataTable,
+        VSimpleTable,
+        VChip
     },
 })
 

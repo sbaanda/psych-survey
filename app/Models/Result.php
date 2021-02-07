@@ -13,7 +13,7 @@ class Result extends Model
 
     protected $table = 'survey_results';
 
-    protected $fillable = ['complete_id', 'item_id', 'no', 'value'];
+    protected $fillable = ['complete_id', 'item_id', 'question_id', 'no', 'value'];
 
     public function complete(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
@@ -23,5 +23,10 @@ class Result extends Model
     public function items(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(Item::class, 'item_id', 'id');
+    }
+
+    public function question(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(Question::class);
     }
 }

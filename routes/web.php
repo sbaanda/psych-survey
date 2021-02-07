@@ -36,8 +36,14 @@ Route::middleware(['auth'])->group(function () {
         Route::post('{slug}/result', [\App\Http\Controllers\SurveyController::class, 'result']);
         Route::post('{slug}/result/remove', [\App\Http\Controllers\SurveyController::class, 'removeResult']);
     });
+
+    Route::prefix('survey')->middleware(['role:doctor'])->group(function () {
+        Route::get('{slug}/patients', [\App\Http\Controllers\SurveyController::class, 'patients']);
+        Route::get('{slug}/list', [\App\Http\Controllers\SurveyController::class, 'listPatients']);
+        Route::get('{slug}/{user}', [\App\Http\Controllers\SurveyController::class, 'patientResult']);
+    });
 });
 
 Route::get('/test', function() {
-    App\Repositories\SurveyRepository::calculateSurvey(App\Models\Complete::find(3));
+    dd(App\Models\User::target(1));
 });
