@@ -42,8 +42,21 @@
                     nav
                 >
                     <v-list-item
+                        v-if="isDoctor"
                         link
-                        :href="this.getDrawer.pdsq"
+                        :href="getDrawer.patients"
+                    >
+                        <v-list-item-icon>
+                            <v-icon>mdi-account-supervisor-circle</v-icon>
+                        </v-list-item-icon>
+
+                        <v-list-item-content>
+                            <v-list-item-title>Pacienti</v-list-item-title>
+                        </v-list-item-content>
+                    </v-list-item>
+                    <v-list-item
+                        link
+                        :href="getDrawer.pdsq"
                     >
                         <v-list-item-icon>
                             <v-icon>mdi-view-dashboard</v-icon>
@@ -59,7 +72,7 @@
             <v-app-bar app>
                 <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
 
-                <v-toolbar-title>Application</v-toolbar-title>
+                <v-toolbar-title></v-toolbar-title>
 
                 <v-spacer></v-spacer>
 

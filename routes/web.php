@@ -42,6 +42,16 @@ Route::middleware(['auth'])->group(function () {
         Route::get('{slug}/list', [\App\Http\Controllers\SurveyController::class, 'listPatients']);
         Route::get('{slug}/{user}', [\App\Http\Controllers\SurveyController::class, 'patientResult']);
     });
+
+    Route::prefix('patients')->middleware(['role:doctor'])->group(function () {
+        Route::get('', [\App\Http\Controllers\PatientsController::class, 'index']);
+        Route::get('list', [\App\Http\Controllers\PatientsController::class, 'list']);
+        Route::get('edit/{type}', [\App\Http\Controllers\PatientsController::class, 'edit']);
+        Route::get('edit/{type}/{user}', [\App\Http\Controllers\PatientsController::class, 'edit']);
+        Route::post('create', [\App\Http\Controllers\PatientsController::class, 'create']);
+        Route::put('update/{user}', [\App\Http\Controllers\PatientsController::class, 'update']);
+        Route::post('delete', [\App\Http\Controllers\PatientsController::class, 'delete']);
+    });
 });
 
 Route::get('/test', function() {

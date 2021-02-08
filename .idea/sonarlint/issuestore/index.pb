@@ -219,3 +219,13 @@ V
 &resources/views/surveyResult.blade.php,b/c/bc73a0e9fe5e80c4af5d4dbcb62c9bce61a540a5
 X
 (resources/js/components/SurveyResult.vue,7/5/7501c12bc12229fd548dcb3b84152a0c55adc644
+K
+app/Policies/UserPolicy.php,7/2/72a6f8426b50f2d6d3c0bdc2da818be7479c8989
+s
+Cdatabase/migrations/2021_02_07_074438_edit_survey_results_table.php,e/5/e50ca1de05111245407ac33a48bb25bce46b50de
+g
+7public/js/resources_js_components_SurveyPatients_vue.js,3/0/30f75d4690f471b3d6b8078dd421f8d8b0f41891
+e
+5public/js/resources_js_components_SurveyResult_vue.js,a/4/a40cba7f768c5785ab81262cd1d45e336060dae6
+^
+.resources/js/components/HorizontalBarChart.vue,c/3/c3641177d1a3f63b5160acc8a9166424ae08ab65

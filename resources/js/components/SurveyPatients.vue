@@ -11,7 +11,7 @@
         >
             <template v-slot:item.actions="{ item }">
                 <v-icon
-                    small
+                    medium
                     class="mr-2"
                     @click="toChart(item)"
                 >
@@ -41,7 +41,7 @@ export default {
                     value: 'name',
                 },
                 { text: 'Email', value: 'email' },
-                { text: 'Actions', value: 'actions', sortable: false }
+                { text: 'Actions', value: 'actions', sortable: false, align: 'right' }
             ],
             usersList: [],
             loading: true

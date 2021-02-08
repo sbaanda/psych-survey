@@ -33,7 +33,8 @@ import Vuetify, {
     VTextField,
     VDataTable,
     VSimpleTable,
-    VChip
+    VChip,
+    VCardTitle
 } from 'vuetify/lib'
 
 Vue.use(Vuetify, {
@@ -68,7 +69,8 @@ Vue.use(Vuetify, {
         VTextField,
         VDataTable,
         VSimpleTable,
-        VChip
+        VChip,
+        VCardTitle
     },
 })
 
