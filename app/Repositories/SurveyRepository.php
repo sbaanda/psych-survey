@@ -13,7 +13,7 @@ class SurveyRepository
             return null;
         }
 
-        $rules = [3, 3, 2, 1];
+        $rules = [9, 5, 5, 2, 4, 1, 4, 5, 1, 2, 8, 2, 2];
 
         $results['items'] = Item::with(['results' => function($q) use($complete) {
             $q->where([
@@ -21,7 +21,7 @@ class SurveyRepository
                 ['value->choice', '=', true]
             ]);
         }])->get()->map(function($value, $key) use($rules) {
-            $value->score_ceil = $rules[$value->id - 1];
+            $value->score_ceil = $rules[$value->no - 1];
             $value->total_results = $value->results->count();
             return $value;
         });

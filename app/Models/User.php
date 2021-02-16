@@ -53,8 +53,15 @@ class User extends Authenticatable
         return $this->hasMany(Complete::class);
     }
 
-    public function results(): \Illuminate\Database\Eloquent\Relations\HasMany
+    public function results(): \Illuminate\Database\Eloquent\Relations\hasManyThrough
     {
-        return $this->hasMany(Result::class);
+        return $this->hasManyThrough(
+            Result::class,
+            Complete::class,
+            'user_id',
+            'complete_id',
+            'id',
+            'id'
+        );
     }
 }

@@ -1933,7 +1933,14 @@ Promise.all([]).then(function (_ref) {
         this.isDark = this.$vuetify.theme.dark;
         localStorage.setItem("dark_theme", this.$vuetify.theme.dark.toString());
       },
-      getViewFrontUrl: function getViewFrontUrl(slug) {}
+      getViewFrontUrl: function getViewFrontUrl(slug) {},
+      logout: function logout() {
+        this.$axios.post('/logout', {}).then(function (response) {
+          if (response.data.status === 'success') {
+            window.location.href = window.location.origin + '/login';
+          }
+        });
+      }
     }
   });
 });

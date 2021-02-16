@@ -31,7 +31,15 @@
 
                     <v-list-item-content>
                         <v-list-item-title>Alina Anca</v-list-item-title>
-                        <v-list-item-subtitle>Logged In</v-list-item-subtitle>
+                        <v-list-item-subtitle>
+                            <v-btn
+                                class="ma-1 caption"
+                                plain
+                                @click="logout"
+                            >
+                                Log Out
+                            </v-btn>
+                        </v-list-item-subtitle>
                     </v-list-item-content>
                 </v-list-item>
 

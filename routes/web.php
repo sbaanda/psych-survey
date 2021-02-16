@@ -55,5 +55,5 @@ Route::middleware(['auth'])->group(function () {
 });
 
 Route::get('/test', function() {
-    dd(App\Models\User::target(1));
+    dd(App\Models\User::find(7)->results()->get());
 });

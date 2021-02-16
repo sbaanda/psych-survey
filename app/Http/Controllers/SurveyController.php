@@ -13,7 +13,7 @@ class SurveyController extends Controller
 {
     public function show(SurveyRepository $surveyRepository, $slug) {
         $surveyDetails = Survey::where('slug', $slug)->first();
-        //remove calculation
+
         $surveyResult = $surveyRepository->calculateSurvey(Complete::where([
             ['survey_id', '=', $surveyDetails->id],
             ['user_id', '=', auth()->user()->id]

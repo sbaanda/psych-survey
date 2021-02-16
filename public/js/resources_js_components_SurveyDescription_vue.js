@@ -37,6 +37,9 @@ __webpack_require__.r(__webpack_exports__);
       type: Object,
       "default": {}
     }
+  },
+  mounted: function mounted() {
+    console.log(this.result);
   }
 });
 
@@ -146,7 +149,7 @@ var render = function() {
             _vm._v(
               "\n            " +
                 _vm._s(
-                  this.result === null ? "Start Survey" : "Restart Survey"
+                  _vm.result === null ? "Start Survey" : "Restart Survey"
                 ) +
                 "\n        "
             )

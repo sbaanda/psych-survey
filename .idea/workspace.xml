@@ -1,25 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="6ce46bd9-5798-4606-ae01-c4e0a99a2ad4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/PatientsController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/resources_js_components_Patient_vue.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/resources_js_components_Patients_vue.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/components/Patient.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/components/Patients.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/patient.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/patients.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_02_10_164642_update_question_name_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_02_10_171251_update_survey_items_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/alina.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/alina.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/7f1afd20-115f-4ca3-a480-a756bab80cf3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/7f1afd20-115f-4ca3-a480-a756bab80cf3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/5/857628e89e6d3e0f341720284d70b5f44c757924" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/5/857628e89e6d3e0f341720284d70b5f44c757924" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/c/aca1efccd4101e0c9bdd34803577859ace08ef45" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/c/aca1efccd4101e0c9bdd34803577859ace08ef45" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthenticatedSessionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthenticatedSessionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PatientsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PatientsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SurveyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SurveyController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/SurveyRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/SurveyRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/resources_js_components_SurveyPatients_vue.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/resources_js_components_SurveyPatients_vue.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/resources_js_components_SurveyResult_vue.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/resources_js_components_SurveyResult_vue.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/resources_js_components_SurveyDescription_vue.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/resources_js_components_SurveyDescription_vue.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/SurveyPatients.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/SurveyPatients.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/plugins/vuetify.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/plugins/vuetify.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/SurveyDescription.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/SurveyDescription.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/auth.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -180,6 +187,9 @@
       <path value="$PROJECT_DIR$/vendor/phpdocumentor/type-resolver" />
       <path value="$PROJECT_DIR$/vendor/laravel/breeze" />
       <path value="$PROJECT_DIR$/vendor/spatie/laravel-permission" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/dbal" />
     </include_path>
   </component>
   <component name="ProjectId" id="1mz8oBowo1BhhuxUxGrYpzot6Id" />
@@ -276,7 +286,12 @@
       <workItem from="1612540480416" duration="1210000" />
       <workItem from="1612637857013" duration="28290000" />
       <workItem from="1612723779387" duration="653000" />
-      <workItem from="1612741431049" duration="15400000" />
+      <workItem from="1612741431049" duration="15640000" />
+      <workItem from="1612861380648" duration="6308000" />
+      <workItem from="1612946325438" duration="6557000" />
+      <workItem from="1612984051060" duration="1175000" />
+      <workItem from="1613026381505" duration="742000" />
+      <workItem from="1613294173917" duration="1169000" />
     </task>
     <task id="LOCAL-00001" summary="first push">
       <created>1610592938522</created>
@@ -348,7 +363,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612693965682</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="patient CRUD">
+      <created>1612760084397</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1612760084397</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -379,6 +401,7 @@
     <MESSAGE value="saving results" />
     <MESSAGE value="doctor patient layering" />
     <MESSAGE value="result display" />
-    <option name="LAST_COMMIT_MESSAGE" value="result display" />
+    <MESSAGE value="patient CRUD" />
+    <option name="LAST_COMMIT_MESSAGE" value="patient CRUD" />
   </component>
 </project>

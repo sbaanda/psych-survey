@@ -61,7 +61,15 @@ Promise.all([]).then(([labels, i18n]) => {
                 localStorage.setItem("dark_theme", this.$vuetify.theme.dark.toString())
             },
 
-            getViewFrontUrl(slug) {}
+            getViewFrontUrl(slug) {},
+
+            logout() {
+                this.$axios.post('/logout', {}).then(response => {
+                    if (response.data.status === 'success') {
+                        window.location.href = window.location.origin + '/login'
+                    }
+                })
+            }
         }
     })
 })

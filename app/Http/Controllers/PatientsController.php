@@ -47,6 +47,8 @@ class PatientsController extends Controller
             'target_id' => auth()->user()->id
         ]);
 
+        $user->assignRole('patient');
+
         event(new Registered($user));
 
         return response()->json(['status' => 'success']);
@@ -67,7 +69,11 @@ class PatientsController extends Controller
 
     public function delete(Request $request): \Illuminate\Http\JsonResponse
     {
-        User::find($request->id)->delete();
+        $user = User::find($request->id);
+
+        $user->results()->delete();
+        $user->complete()->delete();
+        $user->delete();
 
         return response()->json(['status' => 'success']);
     }
