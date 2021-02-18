@@ -247,3 +247,9 @@ t
 Ddatabase/migrations/2021_02_10_164642_update_question_name_table.php,8/3/835a4e750bf54d6ff8ee6b270ef754d927c77c39
 s
 Cdatabase/migrations/2021_02_10_171251_update_survey_items_table.php,f/6/f609c02b48aa3160ad42d98d2c6e2dbbca026bbb
+V
+&app/Providers/EventServiceProvider.php,6/d/6d80af2c8eccc15fa62a616067d4270df372f87d
+Z
+*app/Providers/BroadcastServiceProvider.php,4/8/487aabf55f4492fef38a2c2590a539cbea0535ca
+U
+%app/Providers/AuthServiceProvider.php,a/5/a526ceaeed37cec3622903d924e7bbaf01d42971

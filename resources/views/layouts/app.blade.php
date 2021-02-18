@@ -25,12 +25,8 @@
                 app
             >
                 <v-list-item two-line>
-                    <v-list-item-avatar>
-                        <img src="/images/alina.jpeg" alt="avatar">
-                    </v-list-item-avatar>
-
                     <v-list-item-content>
-                        <v-list-item-title>Alina Anca</v-list-item-title>
+                        <v-list-item-title class="ml-5">{{ auth()->user()->name }}</v-list-item-title>
                         <v-list-item-subtitle>
                             <v-btn
                                 class="ma-1 caption"
