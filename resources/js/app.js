@@ -2,13 +2,13 @@ import Vue from 'vue'
 import axios from 'axios'
 import vuetify from "./plugins/vuetify"
 
-Vue.component('survey', () => import('./components/Survey.vue'))
-Vue.component('register', () => import('./components/Register.vue'))
-Vue.component('survey-description', () => import('./components/SurveyDescription.vue'))
-Vue.component('survey-patients', () => import('./components/SurveyPatients.vue'))
-Vue.component('survey-result', () => import('./components/SurveyResult.vue'))
-Vue.component('patients', () => import('./components/Patients.vue'))
-Vue.component('patient', () => import('./components/Patient.vue'))
+Vue.component('survey', () => import(/* webpackChunkName: "survey" */'./components/Survey.vue'))
+Vue.component('register', () => import(/* webpackChunkName: "register" */ './components/Register.vue'))
+Vue.component('survey-description', () => import(/* webpackChunkName: "survey_description" */ './components/SurveyDescription.vue'))
+Vue.component('survey-patients', () => import(/* webpackChunkName: "survey_patients" */ './components/SurveyPatients.vue'))
+Vue.component('survey-result', () => import(/* webpackChunkName: "survey_results" */ './components/SurveyResult.vue'))
+Vue.component('patients', () => import(/* webpackChunkName: "patients" */ './components/Patients.vue'))
+Vue.component('patient', () => import(/* webpackChunkName: "patient" */ './components/Patient.vue'))
 
 Vue.prototype.$axios = axios
 

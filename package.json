@@ -31,6 +31,7 @@
         "@mdi/font": "^5.8.55",
         "@vue/cli-service": "^4.5.10",
         "chart.js": "^2.9.4",
+        "laravel-mix-brotli": "^1.0.0",
         "roboto-fontface": "^0.10.0",
         "vue": "^2.6.12",
         "vue-chartjs": "^3.5.1",

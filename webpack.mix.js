@@ -1,4 +1,5 @@
-const mix = require('laravel-mix');
+let mix = require('laravel-mix');
+require('laravel-mix-brotli');
 
 /*
  |--------------------------------------------------------------------------
@@ -17,7 +18,42 @@ mix.js('resources/js/app.js', 'public/js')
         require('postcss-import'),
         require('tailwindcss'),
         require('autoprefixer'),
-    ]).vue();
+    ])
+    .webpackConfig({
+        output: {
+            publicPath: Mix.isUsing('hmr') ? (process.argv.includes('--https') ? 'https' : 'http') + '://alina.loc:8080/' : '/',
+            chunkFilename: `js/chunks/[id].[name].[chunkhash].js`
+        },
+    })
+    .vue()
+    .brotli(
+        {
+            enabled: mix.inProduction(),
+            asset: '[path].gz[query]',
+            algorithm: 'gzip',
+            test: /\.(js|css|html|svg|woff2|jpg)$/,
+            threshold: 10240,
+            minRatio: 0.8,
+            quality: 11
+        }
+    );
 
 mix.js('resources/js/guest.js', 'public/js')
-    .sass('resources/sass/guest.scss', 'public/css').vue();
+    .sass('resources/sass/guest.scss', 'public/css')
+    .vue()
+    .brotli(
+        {
+            enabled: mix.inProduction(),
+            asset: '[path].gz[query]',
+            algorithm: 'gzip',
+            test: /\.(js|css|html|svg|woff2|jpg)$/,
+            threshold: 10240,
+            minRatio: 0.8,
+            quality: 11
+        }
+    );
+
+if (mix.inProduction()) {
+    mix
+        .version()
+}
